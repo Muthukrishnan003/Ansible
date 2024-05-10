@@ -1,0 +1,9 @@
+- name: copy src to dest
+  hosts: dev
+  become: true #Giving sudo permission
+  tasks:
+    - name: copy
+      copy:
+        src: /var/www/html/garage/
+        dest: /var/www/html
+

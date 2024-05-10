@@ -1,0 +1,16 @@
+- name: play instances for subnet creation
+  hosts: 54.163.203.229
+  connection: local
+  tasks:
+  - name: Create subnet for database servers
+    amazon.aws.ec2_vpc_subnet:
+      az: us-east-1a
+      state: present
+      vpc_id: vpc-0e90e15e1db82ab62
+      cidr: 172.50.16.0/20
+      region: us-east-1
+      aws_access_key: AKIASMM2W6AXLL4WQ7FO
+      aws_secret_key: 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
+	 tags:
+	   Name: subnet_name
+

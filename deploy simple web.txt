@@ -1,0 +1,37 @@
+- name: Deploy Simple Web Application
+  hosts: your_target_host  # Replace with the hostname or IP address of your target host
+  become: yes  # Run tasks with sudo (root) privileges if needed
+
+  tasks:
+    # Install Git and Apache (adjust for your web server)
+    - name: Install Git and Apache
+      apt:
+        name: 
+          - git
+          - apache2  # Install Apache web server
+        state: present  # Ensure packages are installed
+      become: yes  # Run the task with sudo (root) privileges
+
+    # Clone Git repository to a specific directory
+    - name: Clone web application repository
+      git:
+        repo: https://github.com/your_username/your_webapp.git  # Specify your Git repository URL
+        dest: /var/www/html/your_webapp  # Destination directory for the repository
+        version: master  # Specify the branch or tag to clone (e.g., master)
+      become: yes  # Run the task with sudo (root) privileges
+
+    # Set file permissions (optional - adjust as needed)
+    - name: Set file permissions for web application
+      file:
+        path: /var/www/html/your_webapp
+        owner: ubuntu  # Set appropriate owner (e.g., Apache user)
+        #group: www-data  # Set appropriate group
+        recurse: yes
+      become: yes
+
+    # Restart Apache to serve the web application
+    - name: Restart Apache web server
+      service:
+        name: apache2
+        state: restarted  # Ensure Apache is running and serving the updated web application
+      become: yes  # Run the task with sudo (root) privileges

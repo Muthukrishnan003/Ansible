@@ -1,0 +1,12 @@
+- name: play for delete vpc
+  hosts: 3.93.71.110
+  connection: local
+  tasks:
+  - name: delete vpc
+    amazon.aws.ec2_vpc_net:
+      vpc_id: vpc-034993571c3fe9e61
+      cidr_block: 172.50.0.0/16
+      state: absent
+      region: us-east-2
+      aws_access_key: AKIASMM2W6AXP4KZUK35
+      aws_secret_key: 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

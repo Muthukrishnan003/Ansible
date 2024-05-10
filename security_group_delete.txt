@@ -1,0 +1,11 @@
+- name: play for delete the subnet
+  hosts: 54.162.124.102
+  connection: local
+  tasks:
+  - name: "Delete group by its id"
+    amazon.aws.ec2_security_group:
+      group_id: sg-01d609cd746a86f12
+      state: absent
+      region: us-east-2
+      aws_access_key: AKIASMM2W6AXP4KZUK35
+      aws_secret_key: 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

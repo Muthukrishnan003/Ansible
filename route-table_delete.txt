@@ -1,0 +1,13 @@
+- name: play instances
+  hosts: 3.81.221.48
+  connection: local
+  tasks:
+  - name: delete route table
+    amazon.aws.ec2_vpc_route_table:
+     vpc_id: vpc-1245678
+     route_table_id: "{{ route_table.id }}"
+     lookup: id
+     state: absent
+     region: us-east-2
+     aws_access_key: AKIASMM2W6AXP4KZUK35
+     aws_secret_key: 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

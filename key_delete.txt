@@ -1,0 +1,11 @@
+- name: play for delete the security group
+  hosts: 54.162.124.102
+  connection: local
+  tasks:
+  - name: remove key pair from AWS by name
+    amazon.aws.ec2_key:
+      name: ansi_key
+      state: absent
+      region: us-east-2
+      aws_access_key: AKIASMM2W6AXP4KZUK35
+      aws_secret_key: 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

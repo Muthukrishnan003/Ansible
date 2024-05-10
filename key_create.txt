@@ -1,0 +1,12 @@
+- name: play for instances key pair
+  hosts:  54.163.203.229
+  connection: local
+  tasks:
+  - name: Create ED25519 key pair and save private key into a file
+    amazon.aws.ec2_key:
+      name: ansi_key
+      key_type: ed25519
+      file_name: /tmp/aws_ssh_rsa
+      region: us-east-1
+      aws_access_key: AKIASMM2W6AXLL4WQ7FO
+      aws_secret_key: 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

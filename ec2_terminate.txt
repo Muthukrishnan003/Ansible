@@ -1,0 +1,12 @@
+- name: play instances for terminate
+  hosts: 3.81.221.48
+  connection: local
+  tasks:
+  - name: Terminate every running instance in a region. Use with EXTREME caution.
+    amazon.aws.ec2_instance:
+      state: absent
+      region: us-east-2
+      aws_access_key: AKIASMM2W6AXP4KZUK35
+      aws_secret_key: 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
+      filters:
+        instance-state-name: running
