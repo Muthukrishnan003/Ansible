@@ -7,7 +7,7 @@
       vpc_id: vpc-0e90e15e1db82ab62
       gateway_id: "igw-0b421566b316f4321"
       region: us-east-1
-      aws_access_key: AKIASMM2W6AXLL4WQ7FO
-      aws_secret_key: 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
+      aws_access_key: 
+      aws_secret_key: 
 	 tags:
 	   Name:Route_TBL

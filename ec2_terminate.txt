@@ -6,7 +6,7 @@
     amazon.aws.ec2_instance:
       state: absent
       region: us-east-2
-      aws_access_key: AKIASMM2W6AXP4KZUK35
-      aws_secret_key: 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
+      aws_access_key: 
+      aws_secret_key: 
       filters:
         instance-state-name: running
