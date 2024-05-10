@@ -8,5 +8,5 @@
       key_type: ed25519
       file_name: /tmp/aws_ssh_rsa
       region: us-east-1
-      aws_access_key: 
-      aws_secret_key: 
+     # aws_access_key: 
+      #aws_secret_key: 
